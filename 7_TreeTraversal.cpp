@@ -123,6 +123,30 @@ Node *print2D(Node *r, int space)
     return r;
 }
 
+Node *print2DD(Node *root, int space)
+{
+    if (root == NULL)
+        return root;
+
+    space += SPACE;
+    print2DD(root->right, space);
+    cout << endl;
+    if ((space - SPACE) == 7)
+    {
+        cout << "root-> ";
+    }
+    else
+    {
+        for (int i = SPACE; i < space; i++)
+        {
+            cout << " ";
+        }
+    }
+    cout << root->data << endl;
+    print2DD(root->left, space);
+    return root;
+}
+
 int main()
 {
     Node *root = root;
